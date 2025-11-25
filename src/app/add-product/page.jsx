@@ -50,7 +50,7 @@ const AddProductPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-gray-200 p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Add Product</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -60,7 +60,7 @@ const AddProductPage = () => {
             placeholder="Product Title"
             value={formData.title}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered h-10 w-full"
             required
           />
           <textarea
@@ -68,7 +68,7 @@ const AddProductPage = () => {
             placeholder="Product Description"
             value={formData.description}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered h-10 w-full"
             required
           />
           <input
@@ -77,7 +77,7 @@ const AddProductPage = () => {
             placeholder="Image URL"
             value={formData.image}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered h-10 w-full"
             required
           />
           <input
@@ -86,11 +86,11 @@ const AddProductPage = () => {
             placeholder="Price"
             value={formData.price}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered h-10 w-full"
             required
           />
 
-          <button type="submit" className="btn bg-blue-600 text-white hover:bg-blue-700">
+          <button type="submit" className="btn bg-blue-600 h-10 text-white hover:bg-blue-700">
             Add Product
           </button>
         </form>
