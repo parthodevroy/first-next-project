@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My First Next.js Project
+Developer Website
+## live link  ==
+https://first-next-project-yzu2.vercel.app/
 
-## Getting Started
 
-First, run the development server:
+##  Project Description
+This is a **Next.js 16 + Firebase Authentication** project built with React, TailwindCSS, and DaisyUI.  
+The app includes:
 
+- User registration & login using Firebase Auth
+- Responsive UI with Hero section and Card layouts
+- Dynamic routing for product pages
+- Client-side authentication flow
+- Smooth animations (can integrate Framer Motion)
+
+---
+
+## 🛠 Setup & Installation
+
+### 1. Clone the repository
 ```bash
+git clone <your-repo-url>
+cd my-first-next
+## 2.**
+npm install
+## 3.**
+NEXT_PUBLIC_FIREBASE_API_KEY=<your-api-key>
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<your-auth-domain>
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<your-project-id>
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=<your-storage-bucket>
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<your-messaging-sender-id>
+NEXT_PUBLIC_FIREBASE_APP_ID=<your-app-id>
+## 4
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 5.**
+npm run build
+npm start
+## 6**
+| Route            | Type    | Description                         |
+| ---------------- | ------- | ----------------------------------- |
+| `/`              | Public  | Home page with Hero & Card sections |
+| `/register`      | Public  | User registration page              |
+| `/login`         | Public  | User login page                     |
+| `/products`      | Public  | Products listing page               |
+| `/products/[id]` | Dynamic | Product detail page based on ID     |
+| `/_not-found`    | Static  | Custom 404 page                     |
+## 7.......⚡ Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next.js 16 (App Router)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+React 19
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Firebase Auth
 
-## Learn More
+TailwindCSS + DaisyUI
 
-To learn more about Next.js, take a look at the following resources:
+Lucide React Icons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+SweetAlert2 (for alerts)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MongoDB (for product data)
