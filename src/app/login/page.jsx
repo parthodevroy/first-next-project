@@ -17,7 +17,7 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  if (user) router.push('/dashboard');
+  if (user) router.push('/');
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const LoginPage = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/dashboard');
+      router.push('/');
     } catch (err) {
       setError(err.message);
     }
@@ -35,7 +35,7 @@ const LoginPage = () => {
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, provider);
-      router.push('/dashboard');
+      router.push('/');
     } catch (err) {
       setError(err.message);
     }

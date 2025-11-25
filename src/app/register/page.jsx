@@ -1,7 +1,8 @@
+
 'use client';
 
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../../../firebase.init';
 import Link from 'next/link';
 
@@ -17,6 +18,9 @@ const RegisterPage = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+
+      await signOut(auth);
+
       setSuccess(true);
       setError('');
       e.target.reset();
@@ -34,18 +38,18 @@ const RegisterPage = () => {
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
           <div className="flex flex-col">
             <label className="label font-semibold text-white">Email</label>
-            <input type="email" name="email" className="input input-bordered bg-white h-10 rounded-xls w-full" placeholder="Email" required />
+            <input type="email" name="email" className="input input-bordered bg-white h-10 rounded-xls w-full" required />
           </div>
 
           <div className="flex flex-col relative">
             <label className="label font-semibold text-white">Password</label>
-            <input type={showPassword ? 'text' : 'password'} name="password" className="input input-bordered bg-white h-10 rounded-xls w-full" placeholder="Password" required />
+            <input type={showPassword ? 'text' : 'password'} name="password" className="input input-bordered bg-white h-10 rounded-xls w-full" required />
             <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-10 cursor-pointer">
               {showPassword ? 'Hide' : 'Show'}
             </span>
           </div>
 
-          <button type="submit" className="btn bg-btn bg-amber-300 h-10 rounded-xls text-white mt-4 hover-glow">Register Now</button>
+          <button type="submit" className="btn bg-amber-300 h-10 rounded-xls text-white mt-4">Register Now</button>
         </form>
 
         <p className="mt-4 text-white text-center">
@@ -53,7 +57,7 @@ const RegisterPage = () => {
         </p>
 
         {error && <p className="text-red-500 mt-2">{error}</p>}
-        {success && <p className="text-green-600 mt-2">Registration Successful!</p>}
+        {success && <p className="text-green-600 mt-2">Registration Successful! Please Login.</p>}
       </div>
     </div>
   );
