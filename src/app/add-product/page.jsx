@@ -18,7 +18,7 @@ const AddProductPage = () => {
   const [message, setMessage] = useState("");
 
   if (loading) return <p>Loading...</p>;
-  if (!user) router.push("/login"); // protect page
+  if (!user) router.push("/login"); 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +28,7 @@ const AddProductPage = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/products", {
+      const res = await fetch("https://my-first-next-server-seven.vercel.app/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)

@@ -3,6 +3,7 @@
 
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const params = useParams(); 
@@ -11,18 +12,25 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (!id) return; 
-    fetch(`http://localhost:5000/nav/${id}`)
+    fetch(`https://my-first-next-server-seven.vercel.app/nav/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
 
   const addToCart = async (product) => {
-    await fetch("http://localhost:5000/cart", {
+    await fetch("https://my-first-next-server-seven.vercel.app/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
     });
-    alert("Product added to My Products");
+   Swal.fire({
+  title: `${product.title}`,
+  text: "Bye This Product.",
+  imageUrl: "https://unsplash.it/400/200",
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: "Custom image"
+});
   };
 
   if (!product) return <p>Loading...</p>;
@@ -54,7 +62,7 @@ const ProductDetails = () => {
           onClick={() => addToCart(product)}
           className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg shadow hover:bg-blue-700 transition"
         >
-          Add to Cart
+          Buy Product
         </button>
       </div>
     </div>
