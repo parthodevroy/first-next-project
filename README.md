@@ -1,8 +1,7 @@
 # My First Next.js Project
 Developer Website
 ## live link  ==
-https://first-next-project-yzu2.vercel.app/
-
+https://first-next-project-bice.vercel.app/
 
 ##  Project Description
 This is a **Next.js 16 + Firebase Authentication** project built with React, TailwindCSS, and DaisyUI.  
