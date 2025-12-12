@@ -5,10 +5,12 @@ import SurviceCard from "@/component/surviceCard";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div>
+        <Hero />
       <div>
         <Card1 />
         <SurviceCard/>
+      </div>
       </div>
     </>
   );

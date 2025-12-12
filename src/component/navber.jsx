@@ -19,11 +19,11 @@ const Navbar = () => {
 
   return (
     <div className="bg-white shadow-md">
-      <div className="flex font-semibold w-full max-w-6xl mx-auto py-4 px-4 justify-between items-center">
+      <div className="flex font-semibold  w-full max-w-6xl pl-4 lg:pl-9 pr-4 lg:pr-9 mx-auto py-4 px-4 justify-between items-center">
 
       
         <div className="text-black font-bold text-2xl">
-          Developer <span className="text-red-500">Website</span>
+          Craft <span className="text-red-500">Folio</span>
         </div>
 
       
