@@ -81,3 +81,49 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+// 'use client';
+// import { signIn, useSession } from "next-auth/react";
+// import { useState, useEffect } from "react";
+// import { useRouter } from "next/navigation";
+
+// const LoginPage = () => {
+//   const { data: session } = useSession();
+//   const router = useRouter();
+//   const [error, setError] = useState('');
+
+//   // Login thakle home page-e niye jabe
+//   useEffect(() => {
+//     if (session) router.push('/');
+//   }, [session, router]);
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     const email = e.target.email.value;
+//     const password = e.target.password.value;
+
+//     const res = await signIn("credentials", {
+//       email,
+//       password,
+//       redirect: false,
+//     });
+
+//     if (res.error) {
+//       setError("Invalid Email or Password (Demo: test@example.com / 123456)");
+//     } else {
+//       router.push('/');
+//     }
+//   };
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-white">
+//       <form onSubmit={handleLogin} className="bg-black p-8 rounded-2xl w-full max-w-md">
+//         <h2 className="text-white text-2xl mb-6 text-center">Login</h2>
+//         <input name="email" type="email" placeholder="test@example.com" className="w-full p-2 mb-4 rounded bg-white text-black" required />
+//         <input name="password" type="password" placeholder="123456" className="w-full p-2 mb-4 rounded bg-white text-black" required />
+//         <button type="submit" className="w-full bg-amber-300 p-2 rounded font-bold">Login</button>
+//         {error && <p className="text-red-500 mt-2">{error}</p>}
+//       </form>
+//     </div>
+//   );
+// };
+// export default LoginPage;
